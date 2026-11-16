@@ -44,6 +44,61 @@ To visualize the yearly trend of company revenue and expenses from 2017 to 2023 
 import matplotlib.pyplot as plt
 import numpy as np
 
+# Annual Revenue and Expenses Visualization
+
+# Step 1: Import Libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Step 2: Initialize Dataset
+years = np.arange(2017, 2024)
+
+revenue = [50, 60, 75, 90, 110, 130, 150]
+expenses = [30, 40, 45, 55, 65, 80, 95]
+
+# Step 3: Create Figure
+plt.figure(figsize=(8, 5))
+
+# Step 4: Plot Revenue Line
+plt.plot(years, revenue, color='green',
+         marker='o', linestyle='-',
+         label='Revenue')
+
+# Step 5: Plot Expenses Line
+plt.plot(years, expenses, color='red',
+         marker='s', linestyle='--',
+         label='Expenses')
+
+# Step 6: Add Title and Labels
+plt.title('Annual Revenue and Expenses (2017-2023)',
+          fontweight='bold')
+plt.xlabel('Year')
+plt.ylabel('Amount (in Lakhs)')
+
+# Step 7: Add Grid and Legend
+plt.grid(True, linestyle='--', alpha=0.5)
+plt.legend(loc='upper left')
+
+# Step 8: Find Maximum Values
+max_rev = np.argmax(revenue)
+max_exp = np.argmax(expenses)
+
+# Step 9: Annotate Maximum Revenue
+plt.annotate('Maximum Revenue',
+             xy=(years[max_rev], revenue[max_rev]),
+             xytext=(2019, 145),
+             arrowprops=dict(arrowstyle='->', color='green'))
+
+# Step 10: Annotate Maximum Expenses
+plt.annotate('Maximum Expenses',
+             xy=(years[max_exp], expenses[max_exp]),
+             xytext=(2019, 110),
+             arrowprops=dict(arrowstyle='->', color='red'))
+
+# Step 11: Display Graph
+plt.tight_layout()
+plt.show()
+
 #Step 1: Create dataset
 
 #Step 2: Plot Revenue and Expenses
@@ -57,6 +112,7 @@ import numpy as np
 #Step 6: Adjust layout and show plot
 
 ## Output
+<img width="1020" height="650" alt="image" src="https://github.com/user-attachments/assets/d22f4f92-b216-43e5-8691-3f5d765508db" />
 
 
 ## Result
